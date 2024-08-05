@@ -45,22 +45,28 @@ Run Prettier formatting
   yarn format
 ```
 
-Run TypeScript compiling
+Deploy using GitHub pages
 
 ```bash
-  yarn compile
-```
-
-Serve production build locally
-
-```bash
-  yarn preview
+  yarn run deploy
 ```
 
 Set app title
 
 ```
-git ls-files | xargs sed -i 's/PLACEHOLDER_TITLE/NEW_VALUE/g'
+git ls-files | xargs sed -i 's/PLACEHOLDER_TITLE/TITLE/g'
+```
+
+Set app author
+
+```
+git ls-files | xargs sed -i 's/PLACEHOLDER_AUTHOR/AUTHOR/g'
+```
+
+Change `<repository>` references
+
+```
+git ls-files | xargs sed -i 's/react-ts-minimal-template/YOUR_REPOSITORY/g'
 ```
 
 ## Publish code
