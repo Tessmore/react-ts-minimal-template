@@ -19,8 +19,10 @@
   },
   "dependencies": {
     "@picocss/pico": "^2.0.6",
+    "lodash": "^4.17.21",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "use-debounce": "^10.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
