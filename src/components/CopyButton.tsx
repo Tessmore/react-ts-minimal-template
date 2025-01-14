@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import "./CopyButton.css";
 
 /** Dummy component to get started */
 const CopyButton: React.FC<{ value: string; label: string }> = ({ value, label }) => {
     const [counter, setCounter] = useState(0);
     const [showPopup, setShowPopup] = useState(false);
 
-    // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
     const copyToClipboard = async () => {
         try {
             await navigator.clipboard.writeText(value);
@@ -20,11 +18,15 @@ const CopyButton: React.FC<{ value: string; label: string }> = ({ value, label }
     };
 
     return (
-        <div>
-            <button onClick={copyToClipboard}>
+        <div className="relative">
+            <button onClick={copyToClipboard} className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">
                 {label} ({counter})
             </button>
-            {showPopup && <div className="popup">Copied!</div>}
+            {showPopup && (
+                <div className="absolute bottom-0 right-0 bg-green-500 text-white px-3 py-2.5 rounded z-10 shadow-lg">
+                    Copied!
+                </div>
+            )}
         </div>
     );
 };
